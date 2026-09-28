@@ -8,12 +8,12 @@
 
   <meta
     name="description"
-    content="Ahmad Kaca Film melayani pemasangan kaca film profesional untuk gedung, kantor, showroom, ruko, hotel, dan properti komersial."
+    content="Ahmad Kaca Film melayani pemasangan kaca film profesional untuk gedung, kantor, showroom, hotel, ruko, dan properti komersial. Berpengalaman sejak 1999."
   />
 
   <meta
     name="keywords"
-    content="kaca film gedung, kaca film kantor, kaca film gedung Jakarta, kaca film komersial, pemasangan kaca film gedung, Ahmad Kaca Film"
+    content="kaca film gedung, kaca film kantor, kaca film komersial, pemasangan kaca film gedung, kaca film Jakarta, Ahmad Kaca Film"
   />
 
   <meta name="author" content="Ahmad Kaca Film" />
@@ -22,9 +22,10 @@
   <meta property="og:title" content="Ahmad Kaca Film | Kaca Film Gedung & Komersial" />
   <meta
     property="og:description"
-    content="Solusi kaca film profesional untuk gedung dan properti komersial."
+    content="Solusi kaca film profesional untuk gedung dan properti komersial. Berpengalaman sejak 1999."
   />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ahmadkacafilm.github.io/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,20 +37,28 @@
 
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0b1728;
-      --card: rgba(255, 255, 255, 0.055);
-      --card-hover: rgba(255, 255, 255, 0.085);
-      --line: rgba(255, 255, 255, 0.10);
-      --text: #f5f8fc;
-      --muted: #9aa9bc;
-      --accent: #67d7ff;
-      --accent-2: #9be8ff;
+      --bg: #06101d;
+      --bg-soft: #0a1728;
+      --card: rgba(255,255,255,.055);
+      --card-strong: rgba(255,255,255,.085);
+      --line: rgba(255,255,255,.11);
+
+      --text: #f7faff;
+      --muted: #aab8c9;
+
+      --accent: #65d9ff;
+      --accent-soft: #a7edff;
+
       --white: #ffffff;
-      --dark: #06101c;
+      --dark: #06101d;
+
+      --green: #20c875;
+
       --max: 1180px;
-      --radius: 24px;
-      --shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+      --radius: 26px;
+
+      --shadow:
+        0 30px 90px rgba(0,0,0,.38);
     }
 
     * {
@@ -65,9 +74,18 @@
     body {
       font-family: "Inter", sans-serif;
       background:
-        radial-gradient(circle at 15% 10%, rgba(103, 215, 255, 0.08), transparent 30%),
-        radial-gradient(circle at 85% 25%, rgba(91, 130, 255, 0.07), transparent 28%),
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(101,217,255,.08),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 30%,
+          rgba(87,123,255,.08),
+          transparent 28%
+        ),
         var(--bg);
+
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
@@ -82,13 +100,13 @@
       text-decoration: none;
     }
 
+    button {
+      font: inherit;
+    }
+
     img {
       display: block;
       max-width: 100%;
-    }
-
-    button {
-      font: inherit;
     }
 
     .container {
@@ -96,9 +114,9 @@
       margin: auto;
     }
 
-    /* =========================
+    /* =========================================
        HEADER
-    ========================== */
+    ========================================= */
 
     header {
       position: fixed;
@@ -106,18 +124,24 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      transition: 0.3s ease;
+
       border-bottom: 1px solid transparent;
+
+      transition:
+        background .35s ease,
+        border-color .35s ease,
+        backdrop-filter .35s ease;
     }
 
     header.scrolled {
-      background: rgba(5, 14, 25, 0.86);
-      backdrop-filter: blur(18px);
-      border-bottom-color: var(--line);
+      background: rgba(5,14,25,.82);
+      backdrop-filter: blur(20px);
+      border-color: var(--line);
     }
 
     .nav {
       height: 82px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -127,48 +151,57 @@
       display: flex;
       align-items: center;
       gap: 12px;
+
       font-family: "Manrope", sans-serif;
       font-weight: 800;
       font-size: 18px;
-      letter-spacing: -0.4px;
+      letter-spacing: -.5px;
     }
 
     .logo-mark {
-      width: 40px;
-      height: 40px;
-      border: 1px solid rgba(155, 232, 255, 0.45);
-      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+
       display: grid;
       place-items: center;
+
+      border-radius: 13px;
+      border: 1px solid rgba(101,217,255,.35);
+
       background:
         linear-gradient(
           145deg,
-          rgba(103, 215, 255, 0.20),
-          rgba(255, 255, 255, 0.03)
+          rgba(101,217,255,.18),
+          rgba(255,255,255,.025)
         );
-      box-shadow: inset 0 0 25px rgba(103, 215, 255, 0.08);
+
+      box-shadow:
+        inset 0 0 25px rgba(101,217,255,.07);
     }
 
     .logo-mark span {
-      width: 17px;
-      height: 22px;
+      width: 18px;
+      height: 23px;
+
       border: 2px solid var(--accent);
-      border-radius: 3px;
+      border-radius: 4px;
+
       transform: skewY(-14deg);
-      opacity: 0.9;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 30px;
     }
 
     .nav-links a {
-      color: #c9d4e2;
+      color: #ccd7e5;
+
       font-size: 14px;
       font-weight: 600;
-      transition: 0.25s ease;
+
+      transition: .25s ease;
     }
 
     .nav-links a:hover {
@@ -177,113 +210,212 @@
 
     .nav-cta {
       padding: 11px 18px;
+
       border-radius: 999px;
+
       background: var(--white);
-      color: #07111f !important;
+      color: var(--dark) !important;
+
+      transition: .25s ease;
     }
 
     .nav-cta:hover {
-      background: var(--accent-2);
-      color: #07111f !important;
-      transform: translateY(-1px);
+      background: var(--accent-soft);
+      transform: translateY(-2px);
     }
 
     .menu-toggle {
       display: none;
+
       width: 44px;
       height: 44px;
+
       border: 1px solid var(--line);
       border-radius: 12px;
-      background: rgba(255,255,255,0.05);
+
+      background: rgba(255,255,255,.05);
       color: white;
+
       cursor: pointer;
     }
 
-    /* =========================
+    /* =========================================
        HERO
-    ========================== */
+    ========================================= */
 
     .hero {
+      position: relative;
       min-height: 100vh;
+
       display: flex;
       align-items: center;
-      position: relative;
+
       overflow: hidden;
+
       padding: 140px 0 90px;
     }
 
-    .hero::before {
-      content: "";
+    .hero-background {
       position: absolute;
       inset: 0;
+
+      z-index: 0;
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      opacity: 0;
+
+      transform: scale(1.04);
+
+      transition:
+        opacity 1.5s ease,
+        transform 8s ease;
+    }
+
+    .hero-background.active {
+      opacity: .42;
+      transform: scale(1);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+
+      z-index: 1;
+
       background:
         linear-gradient(
           90deg,
-          rgba(7,17,31,0.98) 0%,
-          rgba(7,17,31,0.82) 43%,
-          rgba(7,17,31,0.35) 75%,
-          rgba(7,17,31,0.8) 100%
+          rgba(4,12,23,.98) 0%,
+          rgba(4,12,23,.91) 32%,
+          rgba(4,12,23,.62) 65%,
+          rgba(4,12,23,.78) 100%
         );
-      z-index: 1;
+    }
+
+    .hero-bottom-fade {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 180px;
+
+      z-index: 2;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          var(--bg)
+        );
     }
 
     .hero-grid {
       position: absolute;
       inset: 0;
+
+      z-index: 2;
+
       background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+        linear-gradient(
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        );
+
       background-size: 70px 70px;
-      mask-image: linear-gradient(to bottom, black, transparent);
-      opacity: 0.4;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent
+        );
+
+      opacity: .45;
     }
 
-    .hero-orb {
+    .hero-glow {
       position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: rgba(103, 215, 255, 0.08);
-      filter: blur(70px);
-      right: -160px;
+
+      width: 520px;
+      height: 520px;
+
+      right: -200px;
       top: 15%;
+
+      z-index: 2;
+
+      border-radius: 50%;
+
+      background:
+        rgba(101,217,255,.08);
+
+      filter: blur(80px);
+
+      pointer-events: none;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
-      max-width: 760px;
+      z-index: 5;
+
+      max-width: 820px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      padding: 8px 13px;
-      border: 1px solid rgba(103, 215, 255, 0.18);
-      background: rgba(103, 215, 255, 0.06);
+
+      padding: 9px 14px;
+
+      border: 1px solid rgba(101,217,255,.22);
       border-radius: 999px;
-      color: var(--accent-2);
+
+      background: rgba(101,217,255,.07);
+
+      color: var(--accent-soft);
+
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.7px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+
+      margin-bottom: 25px;
+
+      backdrop-filter: blur(12px);
     }
 
     .eyebrow-dot {
       width: 7px;
       height: 7px;
+
       border-radius: 50%;
+
       background: var(--accent);
-      box-shadow: 0 0 15px var(--accent);
+
+      box-shadow:
+        0 0 16px var(--accent);
     }
 
     h1 {
       font-family: "Manrope", sans-serif;
+
       font-size: clamp(44px, 6vw, 78px);
-      line-height: 1.03;
+
+      line-height: 1.02;
+
       letter-spacing: -3.5px;
+
       max-width: 900px;
     }
 
@@ -292,493 +424,915 @@
     }
 
     .hero-description {
-      max-width: 650px;
-      color: #aebccc;
-      font-size: 18px;
-      margin-top: 26px;
+      max-width: 700px;
+
+      color: #d3ddea;
+
+      font-size: clamp(16px, 2vw, 19px);
+
+      line-height: 1.8;
+
+      margin-top: 27px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
+
       gap: 13px;
+
       margin-top: 35px;
     }
 
     .btn {
+      min-height: 54px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       gap: 9px;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 14px;
+
+      padding: 0 23px;
+
+      border-radius: 15px;
+
       font-size: 14px;
-      font-weight: 700;
-      transition: 0.25s ease;
+      font-weight: 800;
+
       cursor: pointer;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
     }
 
     .btn-primary {
-      background: var(--white);
+      background: white;
       color: var(--dark);
-      box-shadow: 0 10px 35px rgba(255,255,255,0.09);
+
+      box-shadow:
+        0 15px 45px rgba(0,0,0,.25);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      background: var(--accent-2);
-      box-shadow: 0 15px 40px rgba(103, 215, 255, 0.18);
+      transform: translateY(-3px);
+
+      background: var(--accent-soft);
+
+      box-shadow:
+        0 20px 50px rgba(101,217,255,.18);
     }
 
     .btn-secondary {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.045);
-      color: var(--text);
+      border: 1px solid rgba(255,255,255,.14);
+
+      background: rgba(255,255,255,.055);
+
+      color: white;
+
+      backdrop-filter: blur(14px);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.09);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+
+      background: rgba(255,255,255,.1);
     }
 
-    /* =========================
+    /* =========================================
+       HERO SLIDE INDICATOR
+    ========================================= */
+
+    .hero-slides {
+      position: absolute;
+
+      right: 30px;
+      bottom: 100px;
+
+      z-index: 8;
+
+      display: flex;
+      gap: 8px;
+    }
+
+    .hero-slide-dot {
+      width: 34px;
+      height: 4px;
+
+      border: 0;
+      border-radius: 99px;
+
+      background: rgba(255,255,255,.25);
+
+      cursor: pointer;
+
+      transition: .3s ease;
+    }
+
+    .hero-slide-dot.active {
+      width: 65px;
+
+      background: var(--accent);
+
+      box-shadow:
+        0 0 15px rgba(101,217,255,.45);
+    }
+
+    /* =========================================
        STATS
-    ========================== */
+    ========================================= */
 
     .stats {
-      margin-top: 65px;
+      margin-top: 62px;
+
       display: flex;
       flex-wrap: wrap;
-      gap: 38px;
+
+      gap: 42px;
     }
 
     .stat {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+      position: relative;
+
+      padding-left: 18px;
+    }
+
+    .stat::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 7px;
+
+      width: 3px;
+      height: 34px;
+
+      border-radius: 99px;
+
+      background: var(--accent);
     }
 
     .stat strong {
+      display: block;
+
       font-family: "Manrope", sans-serif;
-      font-size: 21px;
+
+      font-size: 25px;
+
+      line-height: 1.2;
     }
 
     .stat span {
-      color: var(--muted);
+      display: block;
+
+      color: #9faec0;
+
       font-size: 12px;
+
+      margin-top: 4px;
     }
 
-    /* =========================
-       GENERAL SECTIONS
-    ========================== */
+    /* =========================================
+       GENERAL
+    ========================================= */
 
     section {
-      padding: 105px 0;
       position: relative;
+
+      padding: 110px 0;
     }
 
     .section-head {
       display: flex;
       justify-content: space-between;
       align-items: end;
+
       gap: 40px;
-      margin-bottom: 48px;
+
+      margin-bottom: 50px;
     }
 
     .section-label {
       color: var(--accent);
+
       font-size: 12px;
       font-weight: 800;
+
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 12px;
+      letter-spacing: 1.7px;
+
+      margin-bottom: 13px;
     }
 
     h2 {
       font-family: "Manrope", sans-serif;
-      font-size: clamp(32px, 4vw, 49px);
-      line-height: 1.1;
+
+      font-size: clamp(32px, 4vw, 50px);
+
+      line-height: 1.08;
+
       letter-spacing: -2px;
     }
 
     .section-description {
-      color: var(--muted);
-      max-width: 480px;
+      max-width: 520px;
+
+      color: #b3c0d0;
+
       font-size: 15px;
+
+      line-height: 1.8;
     }
 
-    /* =========================
+    /* =========================================
        SERVICES
-    ========================== */
+    ========================================= */
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 17px;
     }
 
     .service-card {
+      --mx: 50%;
+      --my: 50%;
+
       position: relative;
-      padding: 30px;
-      min-height: 270px;
-      border: 1px solid var(--line);
+
+      min-height: 285px;
+
+      padding: 31px;
+
       border-radius: var(--radius);
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.065),
-        rgba(255,255,255,0.025)
-      );
+
+      border: 1px solid var(--line);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.07),
+          rgba(255,255,255,.025)
+        );
+
       overflow: hidden;
-      transition: 0.3s ease;
+
+      transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+      isolation: isolate;
     }
 
-    .service-card::after {
+    .service-card::before {
       content: "";
+
       position: absolute;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      right: -70px;
-      bottom: -70px;
-      background: rgba(103, 215, 255, 0.06);
-      filter: blur(15px);
+      inset: 0;
+
+      z-index: -1;
+
+      background:
+        radial-gradient(
+          circle at var(--mx) var(--my),
+          rgba(101,217,255,.16),
+          transparent 35%
+        );
+
+      opacity: .9;
+
+      transition: .15s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-6px);
-      background: var(--card-hover);
-      border-color: rgba(103,215,255,0.24);
-      box-shadow: var(--shadow);
+      transform:
+        translateY(-8px)
+        scale(1.01);
+
+      border-color:
+        rgba(101,217,255,.32);
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
     }
 
     .service-number {
-      color: rgba(255,255,255,0.28);
-      font-size: 12px;
+      color: rgba(255,255,255,.3);
+
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 1px;
+
+      letter-spacing: 1.5px;
     }
 
     .service-icon {
-      width: 52px;
-      height: 52px;
-      margin: 32px 0 20px;
-      border: 1px solid rgba(103,215,255,0.2);
-      border-radius: 15px;
+      width: 54px;
+      height: 54px;
+
       display: grid;
       place-items: center;
+
+      margin: 28px 0 20px;
+
+      border-radius: 16px;
+
+      border: 1px solid rgba(101,217,255,.2);
+
+      background:
+        rgba(101,217,255,.07);
+
       color: var(--accent);
-      background: rgba(103,215,255,0.06);
+
       font-size: 22px;
+
+      transition:
+        transform .35s ease;
+    }
+
+    .service-card:hover .service-icon {
+      transform:
+        rotate(-5deg)
+        scale(1.08);
     }
 
     .service-card h3 {
       font-family: "Manrope", sans-serif;
+
       font-size: 20px;
-      margin-bottom: 9px;
+
+      margin-bottom: 10px;
     }
 
     .service-card p {
-      color: var(--muted);
+      color: #b8c5d5;
+
       font-size: 14px;
+
+      line-height: 1.75;
     }
 
-    /* =========================
+    /* =========================================
        ABOUT
-    ========================== */
+    ========================================= */
 
     .about {
       background:
         linear-gradient(
           180deg,
           transparent,
-          rgba(255,255,255,0.018),
+          rgba(255,255,255,.018),
           transparent
         );
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 70px;
+
       align-items: center;
     }
 
     .about-copy p {
-      color: var(--muted);
-      margin-top: 22px;
+      color: #b4c1d1;
+
       font-size: 16px;
+
+      line-height: 1.85;
+
+      margin-top: 22px;
     }
 
     .check-list {
-      margin-top: 30px;
       display: grid;
-      gap: 14px;
+
+      gap: 15px;
+
+      margin-top: 30px;
     }
 
     .check-item {
       display: flex;
+
       gap: 13px;
+
       align-items: flex-start;
-      color: #d9e2ed;
+
+      color: #dce5ef;
+
       font-size: 14px;
     }
 
     .check {
       flex: 0 0 auto;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
+
+      width: 23px;
+      height: 23px;
+
       display: grid;
       place-items: center;
-      background: rgba(103,215,255,0.12);
+
+      border-radius: 50%;
+
+      background:
+        rgba(101,217,255,.12);
+
       color: var(--accent);
+
       font-size: 12px;
+
       margin-top: 2px;
     }
 
     .about-panel {
       position: relative;
-      min-height: 470px;
-      border-radius: 30px;
-      border: 1px solid var(--line);
+
+      min-height: 480px;
+
       overflow: hidden;
+
+      border-radius: 30px;
+
+      border: 1px solid var(--line);
+
       background:
         linear-gradient(
           145deg,
-          rgba(103,215,255,0.10),
-          rgba(255,255,255,0.02)
+          rgba(101,217,255,.1),
+          rgba(255,255,255,.025)
         );
+
       box-shadow: var(--shadow);
     }
 
-    .glass-lines {
+    .about-panel::before {
+      content: "";
+
       position: absolute;
       inset: 0;
+
       background:
         linear-gradient(
-          110deg,
+          120deg,
           transparent 20%,
-          rgba(255,255,255,0.10) 20.2%,
-          transparent 20.5%
+          rgba(255,255,255,.09) 20.3%,
+          transparent 20.7%
         ),
         linear-gradient(
-          110deg,
+          120deg,
           transparent 48%,
-          rgba(255,255,255,0.06) 48.2%,
-          transparent 48.5%
+          rgba(255,255,255,.06) 48.3%,
+          transparent 48.7%
         ),
         linear-gradient(
-          110deg,
+          120deg,
           transparent 76%,
-          rgba(255,255,255,0.06) 76.2%,
-          transparent 76.5%
+          rgba(255,255,255,.06) 76.3%,
+          transparent 76.7%
         );
+    }
+
+    .about-panel-glow {
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      right: -100px;
+      top: -100px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(101,217,255,.1);
+
+      filter: blur(70px);
     }
 
     .about-panel-content {
       position: absolute;
-      inset: auto 30px 30px 30px;
-      padding: 24px;
-      border-radius: 20px;
-      background: rgba(5,14,25,0.72);
+
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+
+      padding: 26px;
+
+      border-radius: 21px;
+
       border: 1px solid var(--line);
-      backdrop-filter: blur(15px);
+
+      background:
+        rgba(5,14,25,.78);
+
+      backdrop-filter: blur(18px);
     }
 
     .about-panel-content strong {
       display: block;
+
       font-family: "Manrope", sans-serif;
-      font-size: 24px;
-      margin-bottom: 6px;
+
+      font-size: 26px;
+
+      margin-bottom: 7px;
     }
 
     .about-panel-content span {
-      color: var(--muted);
+      color: #aab8c9;
+
       font-size: 13px;
     }
 
-    /* =========================
+    /* =========================================
        PORTFOLIO
-    ========================== */
+    ========================================= */
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 16px;
     }
 
     .portfolio-item {
       position: relative;
+
       aspect-ratio: 4 / 3;
-      border-radius: 20px;
+
       overflow: hidden;
+
+      border-radius: 20px;
+
       border: 1px solid var(--line);
-      background: #0c1828;
+
+      background: #0b1727;
+
       cursor: pointer;
+
+      transform: translateZ(0);
+
+      transition:
+        transform .35s ease,
+        border-color .35s ease;
+    }
+
+    .portfolio-item:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(101,217,255,.32);
     }
 
     .portfolio-item img {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
-      transition: transform 0.5s ease;
+
+      transition:
+        transform .65s ease,
+        filter .35s ease;
     }
 
     .portfolio-item:hover img {
-      transform: scale(1.06);
+      transform: scale(1.07);
+
+      filter: brightness(.78);
     }
 
     .portfolio-overlay {
       position: absolute;
-      inset: auto 0 0;
-      padding: 55px 18px 18px;
-      background: linear-gradient(transparent, rgba(0,0,0,0.82));
-      color: white;
+      inset: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding: 22px;
+
+      background:
+        linear-gradient(
+          transparent 30%,
+          rgba(0,0,0,.9)
+        );
+
       opacity: 0;
-      transition: 0.25s ease;
+
+      transition: .3s ease;
     }
 
     .portfolio-item:hover .portfolio-overlay {
       opacity: 1;
     }
 
+    .portfolio-code {
+      display: inline-flex;
+
+      align-self: flex-start;
+
+      padding: 6px 10px;
+
+      margin-bottom: 10px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(101,217,255,.13);
+
+      border:
+        1px solid rgba(101,217,255,.24);
+
+      color: var(--accent-soft);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: .7px;
+    }
+
+    .portfolio-overlay strong {
+      font-family: "Manrope", sans-serif;
+
+      font-size: 17px;
+    }
+
     .portfolio-overlay span {
+      color: #d3ddea;
+
       font-size: 12px;
-      color: #d9e2ed;
+
+      margin-top: 3px;
+    }
+
+    .portfolio-actions {
+      display: flex;
+
+      gap: 8px;
+
+      margin-top: 14px;
+    }
+
+    .portfolio-action {
+      min-height: 37px;
+
+      padding: 0 12px;
+
+      border-radius: 10px;
+
+      border: 1px solid rgba(255,255,255,.16);
+
+      background:
+        rgba(255,255,255,.08);
+
+      color: white;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition: .25s ease;
+    }
+
+    .portfolio-action:hover {
+      background: var(--accent);
+
+      color: var(--dark);
     }
 
     .gallery-message {
       grid-column: 1 / -1;
+
       min-height: 260px;
+
       display: grid;
       place-items: center;
+
       text-align: center;
-      border: 1px dashed rgba(255,255,255,0.14);
+
+      border: 1px dashed rgba(255,255,255,.15);
+
       border-radius: 22px;
+
       color: var(--muted);
+
       padding: 40px;
     }
 
     .gallery-message strong {
       display: block;
+
       color: white;
-      margin-bottom: 8px;
+
       font-family: "Manrope", sans-serif;
+
       font-size: 19px;
+
+      margin-bottom: 8px;
     }
 
-    /* =========================
+    /* =========================================
        CTA
-    ========================== */
+    ========================================= */
 
     .cta {
-      padding-top: 50px;
+      padding-top: 45px;
     }
 
     .cta-box {
       position: relative;
+
       overflow: hidden;
-      border: 1px solid rgba(103,215,255,0.16);
+
+      padding: 70px;
+
       border-radius: 30px;
-      padding: 65px;
+
+      border: 1px solid rgba(101,217,255,.18);
+
       background:
-        radial-gradient(circle at 90% 10%, rgba(103,215,255,0.15), transparent 32%),
-        linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(101,217,255,.16),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.075),
+          rgba(255,255,255,.025)
+        );
+    }
+
+    .cta-box::after {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      right: -150px;
+      bottom: -170px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(101,217,255,.09);
+
+      filter: blur(60px);
     }
 
     .cta-box h2 {
-      max-width: 700px;
+      max-width: 720px;
     }
 
     .cta-box p {
-      max-width: 620px;
-      color: var(--muted);
-      margin: 20px 0 28px;
+      max-width: 650px;
+
+      color: #b6c3d3;
+
+      margin: 20px 0 29px;
+
+      line-height: 1.8;
     }
 
-    /* =========================
+    /* =========================================
        FOOTER
-    ========================== */
+    ========================================= */
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 42px 0 30px;
+
+      padding: 45px 0 30px;
+
       margin-top: 40px;
     }
 
     .footer-grid {
       display: flex;
+
       justify-content: space-between;
-      gap: 30px;
       align-items: center;
+
+      gap: 30px;
     }
 
     .footer-copy {
-      color: var(--muted);
+      color: #9baabc;
+
       font-size: 13px;
-      margin-top: 10px;
+
+      margin-top: 9px;
     }
 
     .footer-wa {
       color: var(--accent);
-      font-weight: 700;
+
+      font-weight: 800;
+
       font-size: 14px;
     }
 
     .copyright {
       margin-top: 35px;
+
       padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      color: #68788c;
+
+      border-top: 1px solid rgba(255,255,255,.06);
+
+      color: #69798d;
+
       font-size: 11px;
+
       text-align: center;
     }
 
-    /* =========================
+    /* =========================================
        FLOATING WHATSAPP
-    ========================== */
+    ========================================= */
 
     .floating-wa {
       position: fixed;
+
       right: 22px;
       bottom: 22px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #20c875;
-      color: white;
+
       z-index: 900;
-      box-shadow: 0 14px 35px rgba(0,0,0,0.32);
-      transition: 0.25s ease;
+
+      min-width: 58px;
+      height: 58px;
+
+      padding: 0 17px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      border-radius: 999px;
+
+      background: var(--green);
+
+      color: white;
+
+      box-shadow:
+        0 15px 45px rgba(0,0,0,.35);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      transition: .3s ease;
     }
 
     .floating-wa:hover {
-      transform: translateY(-4px) scale(1.04);
+      transform:
+        translateY(-4px)
+        scale(1.03);
     }
 
     .floating-wa svg {
-      width: 28px;
-      height: 28px;
+      width: 25px;
+      height: 25px;
+
       fill: currentColor;
     }
 
-    /* =========================
+    /* =========================================
        LIGHTBOX
-    ========================== */
+    ========================================= */
 
     .lightbox {
       position: fixed;
       inset: 0;
+
       z-index: 2000;
+
       display: none;
+
       align-items: center;
       justify-content: center;
-      padding: 30px;
-      background: rgba(0,0,0,0.92);
-      backdrop-filter: blur(12px);
+
+      padding: 25px;
+
+      background:
+        rgba(0,0,0,.93);
+
+      backdrop-filter: blur(14px);
     }
 
     .lightbox.active {
@@ -786,60 +1340,114 @@
     }
 
     .lightbox img {
-      max-width: min(1100px, 94vw);
-      max-height: 88vh;
+      max-width: min(1200px, 94vw);
+      max-height: 86vh;
+
       object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 30px 100px rgba(0,0,0,0.6);
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 35px 120px rgba(0,0,0,.65);
     }
 
     .lightbox-close {
       position: absolute;
-      right: 25px;
+
       top: 20px;
-      width: 45px;
-      height: 45px;
+      right: 22px;
+
+      width: 46px;
+      height: 46px;
+
       border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.08);
+
+      border: 1px solid rgba(255,255,255,.17);
+
+      background:
+        rgba(255,255,255,.08);
+
       color: white;
+
       cursor: pointer;
+
       font-size: 22px;
     }
 
-    /* =========================
+    .lightbox-code {
+      position: absolute;
+
+      left: 50%;
+      bottom: 22px;
+
+      transform: translateX(-50%);
+
+      padding: 8px 13px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(0,0,0,.55);
+
+      border: 1px solid rgba(255,255,255,.13);
+
+      color: white;
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* =========================================
        REVEAL
-    ========================== */
+    ========================================= */
 
     .reveal {
       opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+
+      transform:
+        translateY(28px);
+
+      transition:
+        opacity .75s ease,
+        transform .75s ease;
     }
 
     .reveal.visible {
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================== */
+    /* =========================================
+       MOBILE
+    ========================================= */
 
     @media (max-width: 900px) {
+
       .nav-links {
         position: fixed;
+
         top: 82px;
-        left: 20px;
-        right: 20px;
+        left: 16px;
+        right: 16px;
+
         display: none;
+
         flex-direction: column;
+
         align-items: stretch;
+
         padding: 18px;
-        border: 1px solid var(--line);
+
         border-radius: 20px;
-        background: rgba(5,14,25,0.96);
-        backdrop-filter: blur(20px);
+
+        border: 1px solid var(--line);
+
+        background:
+          rgba(5,14,25,.97);
+
+        backdrop-filter: blur(22px);
       }
 
       .nav-links.active {
@@ -852,26 +1460,43 @@
 
       .menu-toggle {
         display: grid;
+
         place-items: center;
       }
 
       .services-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
       }
 
       .about-grid {
         grid-template-columns: 1fr;
+
         gap: 45px;
       }
 
       .portfolio-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .hero-slide-dot {
+        width: 25px;
+      }
+
+      .hero-slide-dot.active {
+        width: 45px;
       }
     }
 
     @media (max-width: 640px) {
+
       .container {
-        width: min(var(--max), calc(100% - 28px));
+        width:
+          min(
+            var(--max),
+            calc(100% - 28px)
+          );
       }
 
       .nav {
@@ -880,36 +1505,82 @@
 
       .nav-links {
         top: 72px;
-        left: 14px;
-        right: 14px;
       }
 
       .hero {
-        padding: 125px 0 70px;
-        min-height: auto;
+        min-height: 850px;
+
+        padding:
+          125px 0 70px;
+
+        align-items: flex-start;
+      }
+
+      .hero-overlay {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(4,12,23,.96),
+            rgba(4,12,23,.74) 55%,
+            rgba(4,12,23,.96)
+          );
+      }
+
+      .hero-background.active {
+        opacity: .30;
       }
 
       h1 {
-        font-size: 43px;
-        letter-spacing: -2.3px;
+        font-size:
+          clamp(40px, 12vw, 58px);
+
+        letter-spacing: -2.5px;
       }
 
       .hero-description {
-        font-size: 15px;
+        font-size: 16px;
+
+        line-height: 1.75;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
       }
 
       .stats {
-        gap: 22px;
-        margin-top: 45px;
+        gap: 25px;
+
+        display: grid;
+
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .stat strong {
+        font-size: 20px;
+      }
+
+      .hero-slides {
+        right: 50%;
+
+        transform:
+          translateX(50%);
+
+        bottom: 65px;
       }
 
       section {
-        padding: 75px 0;
+        padding: 82px 0;
       }
 
       .section-head {
         display: block;
-        margin-bottom: 30px;
+
+        margin-bottom: 35px;
       }
 
       .section-description {
@@ -921,41 +1592,52 @@
       }
 
       .service-card {
-        min-height: auto;
+        min-height: 245px;
+      }
+
+      .about-panel {
+        min-height: 390px;
       }
 
       .portfolio-grid {
         grid-template-columns: 1fr;
       }
 
-      .portfolio-item {
-        aspect-ratio: 4 / 3;
-      }
-
       .portfolio-overlay {
         opacity: 1;
       }
 
-      .about-panel {
-        min-height: 350px;
-      }
-
       .cta-box {
-        padding: 38px 25px;
+        padding: 40px 25px;
       }
 
       .footer-grid {
-        display: block;
-      }
+        flex-direction: column;
 
-      .footer-wa {
-        display: inline-block;
-        margin-top: 20px;
+        align-items: flex-start;
       }
 
       .floating-wa {
-        right: 16px;
-        bottom: 16px;
+        right: 15px;
+        bottom: 15px;
+      }
+
+      .floating-wa span {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
       }
     }
   </style>
@@ -963,33 +1645,46 @@
 
 <body>
 
-  <!-- =========================
+  <!-- =========================================
        HEADER
-  ========================== -->
+  ========================================== -->
 
   <header id="header">
     <div class="container nav">
 
       <a href="#home" class="logo">
-        <span class="logo-mark">
+        <div class="logo-mark">
           <span></span>
-        </span>
-        <span>AHMAD KACA FILM</span>
+        </div>
+
+        <span>Ahmad Kaca Film</span>
       </a>
 
       <nav class="nav-links" id="navLinks">
+
         <a href="#home">Beranda</a>
+
         <a href="#layanan">Layanan</a>
+
         <a href="#tentang">Tentang</a>
+
         <a href="#portfolio">Portfolio</a>
-        <a href="#kontak" class="nav-cta">Konsultasi</a>
+
+        <a
+          class="nav-cta"
+          href="https://wa.me/6285692520888"
+          target="_blank"
+          rel="noopener"
+        >
+          Konsultasi
+        </a>
+
       </nav>
 
       <button
         class="menu-toggle"
         id="menuToggle"
         aria-label="Buka menu"
-        aria-expanded="false"
       >
         ☰
       </button>
@@ -998,20 +1693,35 @@
   </header>
 
 
-  <!-- =========================
+  <!-- =========================================
        HERO
-  ========================== -->
+  ========================================== -->
 
   <main>
 
     <section class="hero" id="home">
 
+      <div
+        class="hero-background active"
+        id="heroBg1"
+      ></div>
+
+      <div
+        class="hero-background"
+        id="heroBg2"
+      ></div>
+
+      <div class="hero-overlay"></div>
+
       <div class="hero-grid"></div>
-      <div class="hero-orb"></div>
+
+      <div class="hero-glow"></div>
+
+      <div class="hero-bottom-fade"></div>
 
       <div class="container">
 
-        <div class="hero-content reveal">
+        <div class="hero-content">
 
           <div class="eyebrow">
             <span class="eyebrow-dot"></span>
@@ -1019,15 +1729,15 @@
           </div>
 
           <h1>
-            Tampilan Gedung Lebih
+            Tampilan Gedung
             <span>Elegan.</span>
             Lebih Nyaman.
           </h1>
 
           <p class="hero-description">
-            Solusi pemasangan kaca film profesional untuk gedung,
-            kantor, showroom, hotel, ruko, dan properti komersial.
-            Fokus pada tampilan, kenyamanan, dan kebutuhan setiap bangunan.
+            Solusi kaca film profesional untuk gedung,
+            kantor, showroom, hotel, ruko, dan properti
+            komersial dengan pengalaman sejak 1999.
           </p>
 
           <div class="hero-actions">
@@ -1038,30 +1748,34 @@
               target="_blank"
               rel="noopener"
             >
-              Konsultasi via WhatsApp →
+              Konsultasi via WhatsApp
             </a>
 
-            <a class="btn btn-secondary" href="#portfolio">
-              Lihat Portfolio
+            <a
+              class="btn btn-secondary"
+              href="#portfolio"
+            >
+              Lihat Hasil Pemasangan
             </a>
 
           </div>
 
+
           <div class="stats">
 
             <div class="stat">
-              <strong>Profesional</strong>
-              <span>Penanganan proyek</span>
+              <strong>20+ Tahun</strong>
+              <span>Pengalaman sejak 1999</span>
+            </div>
+
+            <div class="stat">
+              <strong>1000+</strong>
+              <span>Pekerjaan</span>
             </div>
 
             <div class="stat">
               <strong>Gedung</strong>
-              <span>Fokus properti komersial</span>
-            </div>
-
-            <div class="stat">
-              <strong>Custom</strong>
-              <span>Sesuai kebutuhan proyek</span>
+              <span>Fokus layanan komersial</span>
             </div>
 
           </div>
@@ -1070,12 +1784,29 @@
 
       </div>
 
+
+      <div class="hero-slides">
+
+        <button
+          class="hero-slide-dot active"
+          data-slide="0"
+          aria-label="Foto Hero 1"
+        ></button>
+
+        <button
+          class="hero-slide-dot"
+          data-slide="1"
+          aria-label="Foto Hero 2"
+        ></button>
+
+      </div>
+
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          SERVICES
-    ========================== -->
+    ========================================== -->
 
     <section id="layanan">
 
@@ -1084,14 +1815,20 @@
         <div class="section-head reveal">
 
           <div>
-            <div class="section-label">Layanan</div>
-            <h2>Solusi untuk kebutuhan kaca gedung.</h2>
+            <div class="section-label">
+              Layanan
+            </div>
+
+            <h2>
+              Solusi untuk kebutuhan
+              kaca gedung.
+            </h2>
           </div>
 
           <p class="section-description">
-            Kami berfokus pada kebutuhan kaca film untuk bangunan
-            dan properti komersial dengan pengerjaan yang rapi
-            dan terencana.
+            Dirancang untuk membantu meningkatkan
+            kenyamanan, privasi, dan tampilan
+            profesional bangunan Anda.
           </p>
 
         </div>
@@ -1099,17 +1836,25 @@
 
         <div class="services-grid">
 
+
           <article class="service-card reveal">
 
-            <div class="service-number">01</div>
+            <div class="service-number">
+              01 / SOLAR CONTROL
+            </div>
 
-            <div class="service-icon">◫</div>
+            <div class="service-icon">
+              ☀
+            </div>
 
-            <h3>Kaca Film Gedung</h3>
+            <h3>
+              Tolak Panas
+            </h3>
 
             <p>
-              Pemasangan kaca film untuk gedung perkantoran,
-              bangunan komersial, dan berbagai kebutuhan properti.
+              Membantu mengurangi panas dan
+              paparan sinar matahari langsung
+              sehingga ruangan terasa lebih nyaman.
             </p>
 
           </article>
@@ -1117,15 +1862,22 @@
 
           <article class="service-card reveal">
 
-            <div class="service-number">02</div>
+            <div class="service-number">
+              02 / PRIVACY
+            </div>
 
-            <div class="service-icon">▣</div>
+            <div class="service-icon">
+              ◈
+            </div>
 
-            <h3>Kaca Film Kantor</h3>
+            <h3>
+              Privasi
+            </h3>
 
             <p>
-              Membantu menciptakan ruang kerja yang lebih nyaman
-              sekaligus memberikan tampilan kaca yang lebih profesional.
+              Membantu meningkatkan privasi
+              ruangan tanpa mengorbankan
+              tampilan profesional bangunan.
             </p>
 
           </article>
@@ -1133,15 +1885,22 @@
 
           <article class="service-card reveal">
 
-            <div class="service-number">03</div>
+            <div class="service-number">
+              03 / APPEARANCE
+            </div>
 
-            <div class="service-icon">◇</div>
+            <div class="service-icon">
+              ✦
+            </div>
 
-            <h3>Properti Komersial</h3>
+            <h3>
+              Tampilan Modern
+            </h3>
 
             <p>
-              Solusi kaca film untuk showroom, hotel, ruko,
-              retail, dan berbagai bangunan komersial.
+              Memberikan tampilan kaca yang
+              lebih elegan, rapi, dan profesional
+              untuk berbagai jenis bangunan.
             </p>
 
           </article>
@@ -1149,15 +1908,22 @@
 
           <article class="service-card reveal">
 
-            <div class="service-number">04</div>
+            <div class="service-number">
+              04 / COMMERCIAL
+            </div>
 
-            <div class="service-icon">◈</div>
+            <div class="service-icon">
+              ▣
+            </div>
 
-            <h3>Pengerjaan Proyek</h3>
+            <h3>
+              Gedung & Komersial
+            </h3>
 
             <p>
-              Penanganan pekerjaan dengan memperhatikan kondisi
-              lapangan, ukuran kaca, akses, dan kebutuhan proyek.
+              Fokus pada kebutuhan gedung,
+              kantor, showroom, hotel, ruko,
+              dan properti komersial.
             </p>
 
           </article>
@@ -1165,15 +1931,22 @@
 
           <article class="service-card reveal">
 
-            <div class="service-number">05</div>
+            <div class="service-number">
+              05 / INSTALLATION
+            </div>
 
-            <div class="service-icon">△</div>
+            <div class="service-icon">
+              ⌁
+            </div>
 
-            <h3>Konsultasi</h3>
+            <h3>
+              Pemasangan
+            </h3>
 
             <p>
-              Diskusikan kebutuhan kaca film, kondisi bangunan,
-              area pemasangan, dan konsep yang diinginkan.
+              Pengerjaan pemasangan kaca film
+              dengan perhatian terhadap kerapian
+              dan hasil akhir.
             </p>
 
           </article>
@@ -1181,18 +1954,26 @@
 
           <article class="service-card reveal">
 
-            <div class="service-number">06</div>
+            <div class="service-number">
+              06 / CONSULTATION
+            </div>
 
-            <div class="service-icon">⌁</div>
+            <div class="service-icon">
+              ◎
+            </div>
 
-            <h3>Finishing Rapi</h3>
+            <h3>
+              Konsultasi
+            </h3>
 
             <p>
-              Detail pemasangan diperhatikan agar hasil akhir
-              terlihat bersih, rapi, dan sesuai kebutuhan bangunan.
+              Diskusikan kebutuhan kaca film
+              gedung Anda sebelum menentukan
+              solusi yang sesuai.
             </p>
 
           </article>
+
 
         </div>
 
@@ -1201,11 +1982,14 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          ABOUT
-    ========================== -->
+    ========================================== -->
 
-    <section class="about" id="tentang">
+    <section
+      class="about"
+      id="tentang"
+    >
 
       <div class="container">
 
@@ -1213,44 +1997,59 @@
 
           <div class="about-copy reveal">
 
-            <div class="section-label">Tentang Kami</div>
+            <div class="section-label">
+              Tentang Kami
+            </div>
 
             <h2>
-              Kaca film bukan hanya soal kaca.
+              Berpengalaman sejak
+              <span style="color:var(--accent)">
+                1999.
+              </span>
             </h2>
 
             <p>
-              Ahmad Kaca Film hadir untuk membantu pemilik,
-              pengelola, dan perusahaan mendapatkan solusi kaca film
-              yang sesuai dengan karakter dan kebutuhan bangunannya.
+              Ahmad Kaca Film berfokus pada
+              pemasangan kaca film untuk gedung
+              dan kebutuhan komersial.
             </p>
 
             <p>
-              Kami berfokus pada pekerjaan kaca film gedung dan
-              properti komersial dengan perhatian pada detail,
-              tampilan, serta kualitas hasil pemasangan.
+              Dengan pengalaman lebih dari 20 tahun,
+              kami membantu menghadirkan solusi
+              kaca yang lebih nyaman, privat,
+              dan memiliki tampilan profesional.
             </p>
+
 
             <div class="check-list">
 
               <div class="check-item">
                 <span class="check">✓</span>
-                <span>Fokus pada gedung dan properti komersial.</span>
+                <span>
+                  Fokus pada kaca film gedung dan komersial.
+                </span>
               </div>
 
               <div class="check-item">
                 <span class="check">✓</span>
-                <span>Konsultasi berdasarkan kebutuhan proyek.</span>
+                <span>
+                  Pengalaman sejak tahun 1999.
+                </span>
               </div>
 
               <div class="check-item">
                 <span class="check">✓</span>
-                <span>Pengerjaan dengan perhatian pada detail.</span>
+                <span>
+                  Portfolio pekerjaan dapat dilihat langsung.
+                </span>
               </div>
 
               <div class="check-item">
                 <span class="check">✓</span>
-                <span>Hasil pemasangan rapi dan profesional.</span>
+                <span>
+                  Konsultasi kebutuhan melalui WhatsApp.
+                </span>
               </div>
 
             </div>
@@ -1260,14 +2059,17 @@
 
           <div class="about-panel reveal">
 
-            <div class="glass-lines"></div>
+            <div class="about-panel-glow"></div>
 
             <div class="about-panel-content">
 
-              <strong>AHMAD KACA FILM</strong>
+              <strong>
+                Ahmad Kaca Film
+              </strong>
 
               <span>
-                Building • Commercial • Professional Installation
+                Solusi Kaca Film Gedung & Komersial
+                • Sejak 1999
               </span>
 
             </div>
@@ -1281,9 +2083,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          PORTFOLIO
-    ========================== -->
+    ========================================== -->
 
     <section id="portfolio">
 
@@ -1292,27 +2094,40 @@
         <div class="section-head reveal">
 
           <div>
-            <div class="section-label">Portfolio</div>
-            <h2>Hasil pekerjaan kami.</h2>
+
+            <div class="section-label">
+              Portfolio
+            </div>
+
+            <h2>
+              Hasil pemasangan.
+            </h2>
+
           </div>
 
           <p class="section-description">
-            Dokumentasi pekerjaan akan tampil otomatis di sini.
-            Anda cukup menambahkan foto ke folder
-            <strong>assets/images</strong>.
+            Pilih foto yang Anda sukai.
+            Setiap pekerjaan memiliki kode
+            sehingga Anda cukup menyebutkan
+            kodenya saat menghubungi kami.
           </p>
 
         </div>
 
 
-        <div class="portfolio-grid" id="portfolioGrid">
+        <div
+          class="portfolio-grid"
+          id="portfolioGrid"
+        >
 
           <div class="gallery-message">
             <div>
-              <strong>Portfolio sedang disiapkan</strong>
+              <strong>
+                Memuat portfolio...
+              </strong>
+
               <span>
-                Tambahkan foto pekerjaan ke folder
-                <b>assets/images</b>.
+                Mengambil foto dari galeri.
               </span>
             </div>
           </div>
@@ -1324,34 +2139,35 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          CTA
-    ========================== -->
+    ========================================== -->
 
-    <section class="cta" id="kontak">
+    <section class="cta">
 
       <div class="container">
 
         <div class="cta-box reveal">
 
-          <div class="section-label">Konsultasi Proyek</div>
-
           <h2>
-            Punya kebutuhan kaca film untuk gedung?
+            Butuh solusi kaca film
+            untuk gedung Anda?
           </h2>
 
           <p>
-            Kirimkan kebutuhan atau foto kondisi kaca kepada kami.
-            Diskusikan proyek Anda secara langsung melalui WhatsApp.
+            Konsultasikan kebutuhan Anda
+            bersama Ahmad Kaca Film.
+            Anda juga dapat menyebutkan
+            kode foto portfolio yang Anda sukai.
           </p>
 
           <a
             class="btn btn-primary"
-            href="https://wa.me/6285692520888?text=Halo%20Ahmad%20Kaca%20Film,%20saya%20ingin%20konsultasi%20proyek%20kaca%20film%20gedung."
+            href="https://wa.me/6285692520888?text=Halo%20Ahmad%20Kaca%20Film,%20saya%20ingin%20konsultasi."
             target="_blank"
             rel="noopener"
           >
-            Hubungi Ahmad Kaca Film →
+            Mulai Konsultasi
           </a>
 
         </div>
@@ -1363,9 +2179,9 @@
   </main>
 
 
-  <!-- =========================
+  <!-- =========================================
        FOOTER
-  ========================== -->
+  ========================================== -->
 
   <footer>
 
@@ -1375,17 +2191,22 @@
 
         <div>
 
-          <a href="#home" class="logo">
-            <span class="logo-mark">
+          <div class="logo">
+
+            <div class="logo-mark">
               <span></span>
+            </div>
+
+            <span>
+              Ahmad Kaca Film
             </span>
 
-            <span>AHMAD KACA FILM</span>
-          </a>
+          </div>
 
-          <p class="footer-copy">
-            Solusi kaca film untuk gedung dan properti komersial.
-          </p>
+          <div class="footer-copy">
+            Kaca Film Gedung & Komersial
+            • Berpengalaman sejak 1999
+          </div>
 
         </div>
 
@@ -1403,7 +2224,9 @@
 
 
       <div class="copyright">
-        © <span id="year"></span> Ahmad Kaca Film. All rights reserved.
+        © <span id="year"></span>
+        Ahmad Kaca Film.
+        All rights reserved.
       </div>
 
     </div>
@@ -1411,229 +2234,476 @@
   </footer>
 
 
-  <!-- =========================
+  <!-- =========================================
        FLOATING WHATSAPP
-  ========================== -->
+  ========================================== -->
 
   <a
     class="floating-wa"
-    href="https://wa.me/6285692520888?text=Halo%20Ahmad%20Kaca%20Film,%20saya%20ingin%20konsultasi."
+    href="https://wa.me/6285692520888"
     target="_blank"
     rel="noopener"
-    aria-label="Hubungi Ahmad Kaca Film melalui WhatsApp"
+    aria-label="Chat WhatsApp Ahmad Kaca Film"
   >
 
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20.52 3.48A11.83 11.83 0 0 0 12.07 0C5.52 0 .19 5.33.19 11.88c0 2.09.55 4.13 1.59 5.93L.1 24l6.34-1.66a11.9 11.9 0 0 0 5.63 1.43h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.24-6.16-3.44-8.41ZM12.08 21.72h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.76.99 1-3.66-.23-.38a9.87 9.87 0 1 1 8.39 4.64Zm5.41-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.41.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35Z"/>
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M20.52 3.48A11.78 11.78 0 0012.05 0C5.54 0 .24 5.3.24 11.81c0 2.08.54 4.11 1.57 5.9L.15 24l6.46-1.64a11.8 11.8 0 005.44 1.38h.01c6.5 0 11.79-5.3 11.79-11.81 0-3.15-1.22-6.11-3.33-8.45zM12.06 21.73h-.01a9.82 9.82 0 01-5.01-1.37l-.36-.21-3.83.97 1.02-3.73-.23-.38a9.83 9.83 0 01-1.5-5.2C2.14 6.39 6.58 1.95 12.05 1.95c2.65 0 5.14 1.03 7.01 2.9a9.83 9.83 0 012.9 7c0 5.46-4.44 9.9-9.9 9.9zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.7.64.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"
+      />
     </svg>
+
+    <span>
+      Konsultasi
+    </span>
 
   </a>
 
 
-  <!-- =========================
+  <!-- =========================================
        LIGHTBOX
-  ========================== -->
+  ========================================== -->
 
-  <div class="lightbox" id="lightbox">
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Preview foto"
+  >
 
     <button
       class="lightbox-close"
       id="lightboxClose"
-      aria-label="Tutup gambar"
+      aria-label="Tutup"
     >
       ×
     </button>
 
-    <img id="lightboxImage" src="" alt="Portfolio Ahmad Kaca Film" />
+    <img
+      id="lightboxImage"
+      src=""
+      alt="Preview hasil pemasangan"
+    />
+
+    <div
+      class="lightbox-code"
+      id="lightboxCode"
+    ></div>
 
   </div>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
   <script>
+    /* =========================================
+       CONFIG
+    ========================================== */
+
     const WHATSAPP_NUMBER = "6285692520888";
 
     const GITHUB_OWNER = "Ahmadkacafilm";
-    const GITHUB_REPOSITORY = "ahmadkacafilm.github.io";
+    const GITHUB_REPO = "ahmadkacafilm.github.io";
     const GITHUB_FOLDER = "assets/images";
 
-    /* =========================
-       HEADER
-    ========================== */
-
-    const header = document.getElementById("header");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 30) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    });
+    const HERO_IMAGES = [
+      "assets/images/psg%20kf%20tinggi.jpg",
+      "assets/images/DP.png"
+    ];
 
 
-    /* =========================
-       MOBILE MENU
-    ========================== */
-
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", () => {
-
-      navLinks.classList.toggle("active");
-      document.body.classList.toggle("menu-open");
-
-      const expanded = navLinks.classList.contains("active");
-
-      menuToggle.setAttribute("aria-expanded", expanded);
-
-    });
-
-
-    navLinks.querySelectorAll("a").forEach(link => {
-
-      link.addEventListener("click", () => {
-
-        navLinks.classList.remove("active");
-        document.body.classList.remove("menu-open");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-
-      });
-
-    });
-
-
-    /* =========================
-       YEAR
-    ========================== */
+    /* =========================================
+       BASIC
+    ========================================== */
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
 
-    /* =========================
-       PORTFOLIO OTOMATIS
-    ========================== */
+    /* =========================================
+       HEADER
+    ========================================== */
 
-    const portfolioGrid =
-      document.getElementById("portfolioGrid");
+    const header =
+      document.getElementById("header");
 
-    const lightbox =
-      document.getElementById("lightbox");
+    window.addEventListener(
+      "scroll",
+      () => {
+        header.classList.toggle(
+          "scrolled",
+          window.scrollY > 30
+        );
+      },
+      { passive: true }
+    );
 
-    const lightboxImage =
-      document.getElementById("lightboxImage");
 
-    const lightboxClose =
-      document.getElementById("lightboxClose");
+    /* =========================================
+       MOBILE MENU
+    ========================================== */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+    menuToggle.addEventListener(
+      "click",
+      () => {
+
+        navLinks.classList.toggle("active");
+
+        document.body.classList.toggle(
+          "menu-open",
+          navLinks.classList.contains("active")
+        );
+
+      }
+    );
 
 
-    function isImage(filename) {
+    document.querySelectorAll(
+      ".nav-links a"
+    ).forEach(link => {
 
-      const extensions = [
-        ".jpg",
-        ".jpeg",
-        ".png",
-        ".webp",
-        ".gif"
-      ];
+      link.addEventListener(
+        "click",
+        () => {
 
-      return extensions.some(ext =>
-        filename.toLowerCase().endsWith(ext)
+          navLinks.classList.remove("active");
+
+          document.body.classList.remove(
+            "menu-open"
+          );
+
+        }
       );
+
+    });
+
+
+    /* =========================================
+       HERO SLIDESHOW
+    ========================================== */
+
+    const heroBg1 =
+      document.getElementById("heroBg1");
+
+    const heroBg2 =
+      document.getElementById("heroBg2");
+
+    const slideDots =
+      document.querySelectorAll(
+        ".hero-slide-dot"
+      );
+
+    let currentSlide = 0;
+    let heroTimer = null;
+    let showingFirstLayer = true;
+
+
+    function setHeroBackground(
+      element,
+      image
+    ) {
+
+      element.style.backgroundImage =
+        `url("${image}")`;
 
     }
 
 
-    function naturalSort(a, b) {
+    setHeroBackground(
+      heroBg1,
+      HERO_IMAGES[0]
+    );
 
-      return a.localeCompare(
-        b,
-        undefined,
-        {
-          numeric: true,
-          sensitivity: "base"
+    setHeroBackground(
+      heroBg2,
+      HERO_IMAGES[1]
+    );
+
+
+    function showHeroSlide(index) {
+
+      currentSlide = index;
+
+      const activeElement =
+        showingFirstLayer
+          ? heroBg1
+          : heroBg2;
+
+      const nextElement =
+        showingFirstLayer
+          ? heroBg2
+          : heroBg1;
+
+      nextElement.classList.add("active");
+
+      activeElement.classList.remove("active");
+
+      showingFirstLayer =
+        !showingFirstLayer;
+
+      slideDots.forEach(
+        (dot, dotIndex) => {
+
+          dot.classList.toggle(
+            "active",
+            dotIndex === index
+          );
+
         }
       );
 
     }
 
 
-    function createPortfolioItem(file) {
+    function nextHeroSlide() {
 
-      const item =
-        document.createElement("div");
+      const next =
+        (currentSlide + 1) %
+        HERO_IMAGES.length;
 
-      item.className =
-        "portfolio-item reveal";
-
-
-      const image =
-        document.createElement("img");
-
-      image.src =
-        file.download_url;
-
-      image.alt =
-        "Hasil pemasangan kaca film Ahmad Kaca Film";
-
-      image.loading =
-        "lazy";
-
-
-      const overlay =
-        document.createElement("div");
-
-      overlay.className =
-        "portfolio-overlay";
-
-      overlay.innerHTML =
-        "<span>Ahmad Kaca Film • Portfolio</span>";
-
-
-      item.appendChild(image);
-      item.appendChild(overlay);
-
-
-      item.addEventListener("click", () => {
-
-        lightboxImage.src =
-          file.download_url;
-
-        lightbox.classList.add("active");
-
-        document.body.classList.add("menu-open");
-
-      });
-
-
-      return item;
+      showHeroSlide(next);
 
     }
 
 
-    async function loadPortfolio() {
+    function startHeroTimer() {
+
+      clearInterval(heroTimer);
+
+      heroTimer =
+        setInterval(
+          nextHeroSlide,
+          6500
+        );
+
+    }
+
+
+    slideDots.forEach(
+      (dot, index) => {
+
+        dot.addEventListener(
+          "click",
+          () => {
+
+            showHeroSlide(index);
+
+            startHeroTimer();
+
+          }
+        );
+
+      }
+    );
+
+
+    startHeroTimer();
+
+
+    /* =========================================
+       INTERACTIVE SERVICE CARDS
+    ========================================== */
+
+    document.querySelectorAll(
+      ".service-card"
+    ).forEach(card => {
+
+      card.addEventListener(
+        "pointermove",
+        event => {
+
+          const rect =
+            card.getBoundingClientRect();
+
+          const x =
+            ((event.clientX - rect.left) /
+              rect.width) *
+            100;
+
+          const y =
+            ((event.clientY - rect.top) /
+              rect.height) *
+            100;
+
+          card.style.setProperty(
+            "--mx",
+            `${x}%`
+          );
+
+          card.style.setProperty(
+            "--my",
+            `${y}%`
+          );
+
+        }
+      );
+
+    });
+
+
+    /* =========================================
+       REVEAL ANIMATION
+    ========================================== */
+
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: .12
+        }
+      );
+
+
+    document.querySelectorAll(
+      ".reveal"
+    ).forEach(element => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+    /* =========================================
+       GALLERY
+    ========================================== */
+
+    const portfolioGrid =
+      document.getElementById(
+        "portfolioGrid"
+      );
+
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+    }
+
+
+    function makeStableCode(
+      filename
+    ) {
+
+      let hash = 0;
+
+      for (
+        let i = 0;
+        i < filename.length;
+        i++
+      ) {
+
+        hash =
+          ((hash << 5) - hash) +
+          filename.charCodeAt(i);
+
+        hash |= 0;
+
+      }
+
+      const number =
+        Math.abs(hash) % 10000;
+
+      return "AKF-" +
+        String(number).padStart(4, "0");
+
+    }
+
+
+    function getFileLabel(
+      filename
+    ) {
+
+      return filename
+        .replace(/\.[^/.]+$/, "")
+        .replace(/[_-]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    }
+
+
+    function isImageFile(
+      filename
+    ) {
+
+      return /\.(jpg|jpeg|png|webp|gif)$/i
+        .test(filename);
+
+    }
+
+
+    function isHeroFile(
+      filename
+    ) {
+
+      const normalized =
+        filename.toLowerCase();
+
+      return (
+        normalized ===
+          "psg kf tinggi.jpg" ||
+        normalized ===
+          "dp.png"
+      );
+
+    }
+
+
+    async function loadGallery() {
 
       try {
 
         const apiUrl =
-          `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPOSITORY}/contents/${GITHUB_FOLDER}`;
+          `https://api.github.com/repos/` +
+          `${GITHUB_OWNER}/` +
+          `${GITHUB_REPO}/contents/` +
+          `${GITHUB_FOLDER}`;
 
         const response =
           await fetch(apiUrl, {
             headers: {
-              "Accept": "application/vnd.github+json"
+              Accept:
+                "application/vnd.github+json"
             }
           });
 
 
         if (!response.ok) {
-          throw new Error("Folder portfolio belum tersedia.");
+
+          throw new Error(
+            "Gallery API error"
+          );
+
         }
 
 
@@ -1643,27 +2713,38 @@
 
         const images =
           files
-            .filter(file =>
-              file.type === "file" &&
-              isImage(file.name)
+            .filter(
+              item =>
+                item.type === "file" &&
+                isImageFile(item.name)
             )
-            .sort((a, b) =>
-              naturalSort(a.name, b.name)
+            .filter(
+              item =>
+                !isHeroFile(item.name)
+            )
+            .sort(
+              (a, b) =>
+                a.name.localeCompare(
+                  b.name,
+                  undefined,
+                  {
+                    numeric: true,
+                    sensitivity: "base"
+                  }
+                )
             );
 
 
-        portfolioGrid.innerHTML = "";
-
-
-        if (images.length === 0) {
+        if (!images.length) {
 
           portfolioGrid.innerHTML = `
             <div class="gallery-message">
               <div>
-                <strong>Portfolio sedang disiapkan</strong>
+                <strong>
+                  Portfolio sedang disiapkan
+                </strong>
                 <span>
-                  Tambahkan foto pekerjaan ke folder
-                  <b>assets/images</b>.
+                  Foto hasil pemasangan akan tampil di sini.
                 </span>
               </div>
             </div>
@@ -1674,26 +2755,196 @@
         }
 
 
-        images.forEach(file => {
-
-          portfolioGrid.appendChild(
-            createPortfolioItem(file)
-          );
-
-        });
+        portfolioGrid.innerHTML = "";
 
 
-        observeRevealElements();
+        images.forEach(
+          (item, index) => {
 
-      } catch (error) {
+            const code =
+              makeStableCode(
+                item.name
+              );
+
+            const label =
+              getFileLabel(
+                item.name
+              );
+
+            const imageUrl =
+              item.download_url;
+
+
+            const article =
+              document.createElement(
+                "article"
+              );
+
+            article.className =
+              "portfolio-item reveal";
+
+
+            article.innerHTML = `
+
+              <img
+                src="${imageUrl}"
+                alt="Hasil pemasangan kaca film ${escapeHtml(label)}"
+                loading="${index < 6 ? "eager" : "lazy"}"
+              />
+
+              <div class="portfolio-overlay">
+
+                <span class="portfolio-code">
+                  ${code}
+                </span>
+
+                <strong>
+                  Hasil Pemasangan
+                </strong>
+
+                <span>
+                  ${escapeHtml(label)}
+                </span>
+
+                <div class="portfolio-actions">
+
+                  <button
+                    class="portfolio-action view-photo"
+                    type="button"
+                  >
+                    Lihat Foto
+                  </button>
+
+                  <button
+                    class="portfolio-action choose-photo"
+                    type="button"
+                  >
+                    Pilih Foto
+                  </button>
+
+                </div>
+
+              </div>
+
+            `;
+
+
+            const image =
+              article.querySelector(
+                "img"
+              );
+
+
+            const viewButton =
+              article.querySelector(
+                ".view-photo"
+              );
+
+
+            const chooseButton =
+              article.querySelector(
+                ".choose-photo"
+              );
+
+
+            function openPhoto() {
+
+              openLightbox(
+                imageUrl,
+                code
+              );
+
+            }
+
+
+            image.addEventListener(
+              "click",
+              openPhoto
+            );
+
+
+            viewButton.addEventListener(
+              "click",
+              event => {
+
+                event.stopPropagation();
+
+                openPhoto();
+
+              }
+            );
+
+
+            chooseButton.addEventListener(
+              "click",
+              event => {
+
+                event.stopPropagation();
+
+                const message =
+                  `Halo Ahmad Kaca Film, saya tertarik dengan hasil pemasangan ${code}. Mohon informasinya.`;
+
+                const url =
+                  `https://wa.me/${WHATSAPP_NUMBER}` +
+                  `?text=${encodeURIComponent(message)}`;
+
+                window.open(
+                  url,
+                  "_blank",
+                  "noopener"
+                );
+
+              }
+            );
+
+
+            article.addEventListener(
+              "click",
+              event => {
+
+                if (
+                  event.target.closest(
+                    "button"
+                  )
+                ) {
+                  return;
+                }
+
+                openPhoto();
+
+              }
+            );
+
+
+            portfolioGrid.appendChild(
+              article
+            );
+
+
+            revealObserver.observe(
+              article
+            );
+
+          }
+        );
+
+      }
+
+      catch (error) {
+
+        console.error(
+          error
+        );
 
         portfolioGrid.innerHTML = `
           <div class="gallery-message">
             <div>
-              <strong>Portfolio sedang disiapkan</strong>
+              <strong>
+                Portfolio belum dapat dimuat
+              </strong>
+
               <span>
-                Foto pekerjaan akan tampil otomatis
-                setelah tersedia di folder portfolio.
+                Silakan refresh halaman beberapa saat lagi.
               </span>
             </div>
           </div>
@@ -1704,17 +2955,64 @@
     }
 
 
-    /* =========================
+    /* =========================================
        LIGHTBOX
-    ========================== */
+    ========================================== */
+
+    const lightbox =
+      document.getElementById(
+        "lightbox"
+      );
+
+    const lightboxImage =
+      document.getElementById(
+        "lightboxImage"
+      );
+
+    const lightboxCode =
+      document.getElementById(
+        "lightboxCode"
+      );
+
+    const lightboxClose =
+      document.getElementById(
+        "lightboxClose"
+      );
+
+
+    function openLightbox(
+      imageUrl,
+      code
+    ) {
+
+      lightboxImage.src =
+        imageUrl;
+
+      lightboxCode.textContent =
+        code;
+
+      lightbox.classList.add(
+        "active"
+      );
+
+      document.body.classList.add(
+        "menu-open"
+      );
+
+    }
+
 
     function closeLightbox() {
 
-      lightbox.classList.remove("active");
+      lightbox.classList.remove(
+        "active"
+      );
 
       lightboxImage.src = "";
 
-      document.body.classList.remove("menu-open");
+      document.body.classList.remove(
+        "menu-open"
+      );
 
     }
 
@@ -1729,8 +3027,12 @@
       "click",
       event => {
 
-        if (event.target === lightbox) {
+        if (
+          event.target === lightbox
+        ) {
+
           closeLightbox();
+
         }
 
       }
@@ -1741,72 +3043,23 @@
       "keydown",
       event => {
 
-        if (event.key === "Escape") {
+        if (
+          event.key === "Escape"
+        ) {
+
           closeLightbox();
+
         }
 
       }
     );
 
 
-    /* =========================
-       SCROLL REVEAL
-    ========================== */
+    /* =========================================
+       START GALLERY
+    ========================================== */
 
-    let revealObserver;
-
-
-    function observeRevealElements() {
-
-      if (revealObserver) {
-        revealObserver.disconnect();
-      }
-
-
-      revealObserver =
-        new IntersectionObserver(
-          entries => {
-
-            entries.forEach(entry => {
-
-              if (entry.isIntersecting) {
-
-                entry.target.classList.add(
-                  "visible"
-                );
-
-                revealObserver.unobserve(
-                  entry.target
-                );
-
-              }
-
-            });
-
-          },
-          {
-            threshold: 0.12
-          }
-        );
-
-
-      document
-        .querySelectorAll(".reveal")
-        .forEach(element => {
-
-          revealObserver.observe(element);
-
-        });
-
-    }
-
-
-    /* =========================
-       START
-    ========================== */
-
-    observeRevealElements();
-    loadPortfolio();
+    loadGallery();
 
   </script>
 
