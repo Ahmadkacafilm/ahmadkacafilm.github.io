@@ -1595,6 +1595,18 @@
         min-height: 245px;
       }
 
+      .functions-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .functions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .function-card {
+        min-height: auto;
+      }
+
       .about-panel {
         min-height: 390px;
       }
@@ -1625,6 +1637,130 @@
       .floating-wa span {
         display: none;
       }
+    }
+
+    /* =========================================
+       SERVICE & FUNCTION ENHANCEMENTS
+    ========================================== */
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 22px;
+    }
+
+    .service-tags span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(101,217,255,.16);
+      background: rgba(101,217,255,.055);
+      color: #b9eefe;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .35px;
+    }
+
+    .functions-section {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.018),
+          transparent
+        );
+    }
+
+    .functions-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .function-card {
+      min-height: 245px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.055),
+          rgba(255,255,255,.018)
+        );
+      transition: .3s ease;
+    }
+
+    .function-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(101,217,255,.24);
+      background: var(--card-hover);
+      box-shadow: var(--shadow);
+    }
+
+    .function-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      border: 1px solid rgba(101,217,255,.18);
+      background: rgba(101,217,255,.055);
+      color: var(--accent);
+      font-size: 18px;
+      margin-bottom: 22px;
+    }
+
+    .function-card h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .function-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .about-panel-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: .72;
+      filter: brightness(.82) saturate(.92);
+    }
+
+    .about-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(5,14,25,.08),
+          rgba(5,14,25,.72)
+        );
+      pointer-events: none;
+    }
+
+    .about-panel-content,
+    .about-panel-glow {
+      z-index: 2;
+    }
+
+    /* Hero sekarang memakai satu foto utama */
+    #heroBg1 {
+      background-image: url("/assets/images/psg%20kf%20tinggi.jpg") !important;
+      opacity: 1 !important;
+    }
+
+    #heroBg2,
+    .hero-slides {
+      display: none !important;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1735,9 +1871,9 @@
           </h1>
 
           <p class="hero-description">
-            Solusi kaca film profesional untuk gedung,
-            kantor, showroom, hotel, ruko, dan properti
-            komersial dengan pengalaman sejak 1999.
+            Solusi kaca film untuk gedung dan properti
+            komersial, serta cutting stiker dan decorative film
+            untuk kebutuhan branding dan tampilan ruangan.
           </p>
 
           <div class="hero-actions">
@@ -1821,26 +1957,24 @@
 
             <h2>
               Solusi untuk kebutuhan
-              kaca gedung.
+              kaca gedung & visual.
             </h2>
           </div>
 
           <p class="section-description">
-            Dirancang untuk membantu meningkatkan
-            kenyamanan, privasi, dan tampilan
-            profesional bangunan Anda.
+            Tiga layanan utama untuk membantu meningkatkan
+            kenyamanan, privasi, tampilan, dan identitas
+            visual bangunan Anda.
           </p>
 
         </div>
 
-
         <div class="services-grid">
-
 
           <article class="service-card reveal">
 
             <div class="service-number">
-              01 / SOLAR CONTROL
+              01 / KACA FILM
             </div>
 
             <div class="service-icon">
@@ -1848,14 +1982,20 @@
             </div>
 
             <h3>
-              Tolak Panas
+              Kaca Film Gedung & Komersial
             </h3>
 
             <p>
-              Membantu mengurangi panas dan
-              paparan sinar matahari langsung
-              sehingga ruangan terasa lebih nyaman.
+              Solusi kaca film untuk gedung, kantor,
+              showroom, hotel, ruko, dan berbagai
+              properti komersial.
             </p>
+
+            <div class="service-tags">
+              <span>Tolak Panas</span>
+              <span>Privasi</span>
+              <span>UV</span>
+            </div>
 
           </article>
 
@@ -1863,30 +2003,7 @@
           <article class="service-card reveal">
 
             <div class="service-number">
-              02 / PRIVACY
-            </div>
-
-            <div class="service-icon">
-              ◈
-            </div>
-
-            <h3>
-              Privasi
-            </h3>
-
-            <p>
-              Membantu meningkatkan privasi
-              ruangan tanpa mengorbankan
-              tampilan profesional bangunan.
-            </p>
-
-          </article>
-
-
-          <article class="service-card reveal">
-
-            <div class="service-number">
-              03 / APPEARANCE
+              02 / CUTTING STIKER
             </div>
 
             <div class="service-icon">
@@ -1894,14 +2011,20 @@
             </div>
 
             <h3>
-              Tampilan Modern
+              Cutting Stiker & Decorative Film
             </h3>
 
             <p>
-              Memberikan tampilan kaca yang
-              lebih elegan, rapi, dan profesional
-              untuk berbagai jenis bangunan.
+              Untuk kebutuhan branding, dekorasi kaca,
+              partisi kantor, logo, tulisan, identitas
+              perusahaan, dan elemen visual ruangan.
             </p>
+
+            <div class="service-tags">
+              <span>Branding</span>
+              <span>Decorative</span>
+              <span>Logo</span>
+            </div>
 
           </article>
 
@@ -1909,71 +2032,114 @@
           <article class="service-card reveal">
 
             <div class="service-number">
-              04 / COMMERCIAL
+              03 / SOLUSI BANGUNAN
             </div>
 
             <div class="service-icon">
-              ▣
+              ◈
             </div>
 
             <h3>
-              Gedung & Komersial
+              Solusi Kaca untuk Kantor & Bangunan
             </h3>
 
             <p>
-              Fokus pada kebutuhan gedung,
-              kantor, showroom, hotel, ruko,
-              dan properti komersial.
+              Membantu menentukan pilihan film, tingkat
+              privasi, warna, dan tampilan yang sesuai
+              dengan kebutuhan bangunan.
             </p>
+
+            <div class="service-tags">
+              <span>Modern</span>
+              <span>Profesional</span>
+              <span>Konsultasi</span>
+            </div>
 
           </article>
 
+        </div>
 
-          <article class="service-card reveal">
+      </div>
 
-            <div class="service-number">
-              05 / INSTALLATION
+    </section>
+
+
+    <!-- =========================================
+         FUNCTIONS
+    ========================================== -->
+
+    <section class="functions-section" id="fungsi">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+            <div class="section-label">
+              Fungsi & Kegunaan
             </div>
 
-            <div class="service-icon">
-              ⌁
-            </div>
+            <h2>
+              Lebih dari sekadar
+              pelapis kaca.
+            </h2>
+          </div>
 
-            <h3>
-              Pemasangan
-            </h3>
+          <p class="section-description">
+            Pemilihan kaca film dapat disesuaikan dengan
+            kebutuhan kenyamanan, privasi, keamanan, dan
+            tampilan ruang.
+          </p>
 
+        </div>
+
+        <div class="functions-grid">
+
+          <article class="function-card reveal">
+            <div class="function-icon">☀</div>
+            <h3>Mengurangi Panas & Paparan UV</h3>
             <p>
-              Pengerjaan pemasangan kaca film
-              dengan perhatian terhadap kerapian
-              dan hasil akhir.
+              Membantu mengurangi panas yang masuk melalui
+              kaca serta paparan sinar ultraviolet.
             </p>
-
           </article>
 
-
-          <article class="service-card reveal">
-
-            <div class="service-number">
-              06 / CONSULTATION
-            </div>
-
-            <div class="service-icon">
-              ◎
-            </div>
-
-            <h3>
-              Konsultasi
-            </h3>
-
+          <article class="function-card reveal">
+            <div class="function-icon">◉</div>
+            <h3>Menjaga Privasi</h3>
             <p>
-              Diskusikan kebutuhan kaca film
-              gedung Anda sebelum menentukan
-              solusi yang sesuai.
+              Membantu mengurangi pandangan dari luar sehingga
+              privasi di dalam ruangan tetap terjaga.
             </p>
-
           </article>
 
+          <article class="function-card reveal">
+            <div class="function-icon">✦</div>
+            <h3>Memperindah Ruangan</h3>
+            <p>
+              Memberikan tampilan kaca yang lebih elegan,
+              modern dan sesuai karakter ruangan.
+            </p>
+          </article>
+
+          <article class="function-card reveal">
+            <div class="function-icon">◇</div>
+            <h3>Membantu Menahan Pecahan Kaca</h3>
+            <p>
+              Pada jenis film tertentu, film dapat membantu
+              menahan pecahan kaca agar tidak langsung
+              berserakan ketika kaca mengalami kerusakan.
+            </p>
+          </article>
+
+          <article class="function-card reveal">
+            <div class="function-icon">↻</div>
+            <h3>Mudah Mengganti Corak</h3>
+            <p>
+              Tampilan corak atau desain dapat diganti sesuai
+              kebutuhan tanpa harus mengganti atau merusak kaca.
+            </p>
+          </article>
 
         </div>
 
@@ -2009,9 +2175,9 @@
             </h2>
 
             <p>
-              Ahmad Kaca Film berfokus pada
-              pemasangan kaca film untuk gedung
-              dan kebutuhan komersial.
+              Ahmad Kaca Film melayani kebutuhan kaca film
+              gedung dan komersial, sekaligus cutting stiker
+              dan decorative film untuk kebutuhan visual ruangan.
             </p>
 
             <p>
@@ -2058,6 +2224,12 @@
 
 
           <div class="about-panel reveal">
+
+            <img
+              src="/assets/images/DP.png"
+              alt="Tim Ahmad Kaca Film"
+              class="about-panel-image"
+            />
 
             <div class="about-panel-glow"></div>
 
