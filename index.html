@@ -958,6 +958,38 @@
        PORTFOLIO
     ========================================= */
 
+    .portfolio-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: -18px 0 24px;
+    }
+
+    .portfolio-filter {
+      min-height: 38px;
+      padding: 0 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.035);
+      color: #aebdce;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .35px;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .portfolio-filter:hover,
+    .portfolio-filter.active {
+      border-color: rgba(101,217,255,.28);
+      background: rgba(101,217,255,.1);
+      color: #d9f7ff;
+    }
+
+    .portfolio-item.is-hidden {
+      display: none;
+    }
+
     .portfolio-grid {
       display: grid;
 
@@ -1475,6 +1507,10 @@
         gap: 45px;
       }
 
+      .portfolio-filters {
+        margin-top: -8px;
+      }
+
       .portfolio-grid {
         grid-template-columns:
           1fr 1fr;
@@ -1593,10 +1629,6 @@
 
       .service-card {
         min-height: 245px;
-      }
-
-      .functions-grid {
-        grid-template-columns: 1fr 1fr;
       }
 
       .functions-grid {
@@ -1921,22 +1953,7 @@
       </div>
 
 
-      <div class="hero-slides">
-
-        <button
-          class="hero-slide-dot active"
-          data-slide="0"
-          aria-label="Foto Hero 1"
-        ></button>
-
-        <button
-          class="hero-slide-dot"
-          data-slide="1"
-          aria-label="Foto Hero 2"
-        ></button>
-
-      </div>
-
+      <div class="hero-slides" aria-hidden="true"></div>
     </section>
 
 
@@ -2278,12 +2295,23 @@
           </div>
 
           <p class="section-description">
-            Pilih foto yang Anda sukai.
-            Setiap pekerjaan memiliki kode
-            sehingga Anda cukup menyebutkan
-            kodenya saat menghubungi kami.
+            Lihat berbagai hasil pekerjaan Ahmad Kaca Film.
+            Setiap foto memiliki kode untuk memudahkan
+            Anda menyebutkan referensinya saat berkonsultasi.
           </p>
 
+        </div>
+
+        <div class="portfolio-filters reveal" aria-label="Filter portfolio">
+          <button class="portfolio-filter active" type="button" data-filter="all">
+            Semua
+          </button>
+          <button class="portfolio-filter" type="button" data-filter="kaca-film">
+            Kaca Film
+          </button>
+          <button class="portfolio-filter" type="button" data-filter="cutting-stiker">
+            Cutting Stiker
+          </button>
         </div>
 
 
@@ -2480,8 +2508,7 @@
     const GITHUB_FOLDER = "assets/images";
 
     const HERO_IMAGES = [
-      "assets/images/psg%20kf%20tinggi.jpg",
-      "assets/images/DP.png"
+      "assets/images/psg%20kf%20tinggi.jpg"
     ];
 
 
@@ -2824,6 +2851,40 @@
     }
 
 
+    function getPortfolioCategory(filename) {
+
+      const normalized =
+        filename
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, " ");
+
+      const cuttingKeywords = [
+        "cutting",
+        "cut",
+        "stiker",
+        "sticker",
+        "decal",
+        "branding",
+        "logo",
+        "sign",
+        "lettering",
+        "vinyl",
+        "decorative"
+      ];
+
+      const isCutting =
+        cuttingKeywords.some(
+          keyword =>
+            normalized.includes(keyword)
+        );
+
+      return isCutting
+        ? "cutting-stiker"
+        : "kaca-film";
+
+    }
+
+
     function isImageFile(
       filename
     ) {
@@ -2952,15 +3013,25 @@
                 "article"
               );
 
+            const category =
+              getPortfolioCategory(
+                item.name
+              );
+
             article.className =
               "portfolio-item reveal";
+
+            article.dataset.category =
+              category;
 
 
             article.innerHTML = `
 
               <img
                 src="${imageUrl}"
-                alt="Hasil pemasangan kaca film ${escapeHtml(label)}"
+                alt="${category === "cutting-stiker"
+                  ? "Hasil cutting stiker dan decorative film"
+                  : "Hasil pemasangan kaca film gedung"} - ${escapeHtml(label)}"
                 loading="${index < 6 ? "eager" : "lazy"}"
               />
 
@@ -3225,6 +3296,57 @@
 
       }
     );
+
+
+    /* =========================================
+       PORTFOLIO FILTER
+    ========================================== */
+
+    const portfolioFilters =
+      document.querySelectorAll(
+        ".portfolio-filter"
+      );
+
+    portfolioFilters.forEach(
+      filterButton => {
+
+        filterButton.addEventListener(
+          "click",
+          () => {
+
+            const selected =
+              filterButton.dataset.filter;
+
+            portfolioFilters.forEach(
+              button => {
+                button.classList.toggle(
+                  "active",
+                  button === filterButton
+                );
+              }
+            );
+
+            document
+              .querySelectorAll(
+                ".portfolio-item"
+              )
+              .forEach(item => {
+
+                const shouldShow =
+                  selected === "all" ||
+                  item.dataset.category === selected;
+
+                item.classList.toggle(
+                  "is-hidden",
+                  !shouldShow
+                );
+
+              });
+
+          }
+        );
+
+      });
 
 
     /* =========================================
